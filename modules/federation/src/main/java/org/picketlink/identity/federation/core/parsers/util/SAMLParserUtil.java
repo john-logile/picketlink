@@ -318,6 +318,8 @@ public class SAMLParserUtil {
         String typeValue = StaxParserUtil.getAttributeValue(type);
         if (typeValue.contains(":string")) {
             return StaxParserUtil.getElementText(xmlEventReader);
+        } else if (typeValue.contains(":boolean")) {
+            return StaxParserUtil.getElementText(xmlEventReader);
         } else if (typeValue.contains(":anyType")) {
             // TODO: for now assume that it is a text value that can be parsed and set as the attribute value
             return StaxParserUtil.getElementText(xmlEventReader);

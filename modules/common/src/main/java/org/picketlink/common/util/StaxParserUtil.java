@@ -164,6 +164,27 @@ public class StaxParserUtil {
         }
         return str;
     }
+    
+    /**
+     * Get the element boolean.
+     *
+     * @param xmlEventReader
+     *
+     * @return A <b>trimmed</b> string value
+     *
+     * @throws ParsingException
+     */
+    public static Boolean getElementBoolean(XMLEventReader xmlEventReader) throws ParsingException {
+        Boolean value = null;
+        try {
+            String valueStr = xmlEventReader.getElementText().trim();
+            valueStr = StringUtil.getSystemPropertyAsString(valueStr);
+            value = Boolean.valueOf(valueStr);
+        } catch (XMLStreamException e) {
+            throw logger.parserException(e);
+        }
+        return value;
+    }
 
     /**
      * Get the XML event reader

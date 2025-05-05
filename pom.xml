@@ -37,11 +37,11 @@
 
   <properties>
     <!-- Maven Compiler Options -->
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
 
     <!-- Build Options-->
-    <maven.jdk.version>1.7</maven.jdk.version>
+    <maven.jdk.version>1.8</maven.jdk.version>
     <maven.version>3.0.4</maven.version>
 
     <!-- Maven Plugin Versions -->
@@ -379,13 +379,7 @@
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>${version.checkstyle.plugin}</version>
-          <dependencies>
-            <dependency>
-              <groupId>org.picketlink</groupId>
-              <artifactId>picketlink-build-config</artifactId>
-              <version>${project.version}</version>
-            </dependency>
-          </dependencies>
+ 
           <configuration>
             <configLocation>/picketlink-checkstyle/checkstyle.xml</configLocation>
             <consoleOutput>true</consoleOutput>
